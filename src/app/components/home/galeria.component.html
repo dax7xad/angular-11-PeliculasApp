@@ -1,3 +1,27 @@
-<p>
-  galeria works!
-</p>
+<br>
+<h1>{{ titulo }}</h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="peliculas">
+
+  <div class="col-sm-6">
+
+    <div *ngFor=" let item of peliculas|slice:0:3|posterDestacado:true;let i =index">
+
+      <app-poster [pelicula]="item" [principal]="item.principal">
+      </app-poster>
+
+
+    </div>
+  </div>
+
+  <!-- <div class="col-sm-6">
+
+    <div *ngFor=" let item of peliculas|slice:3:7|posterDestacado:false">
+      <app-poster [pelicula]="item" [principal]="item.principal">
+      </app-poster>
+    </div>
+  </div> -->
+
+
+</div>

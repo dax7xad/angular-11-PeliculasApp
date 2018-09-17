@@ -14,7 +14,9 @@ import { GaleriaComponent } from './components/home/galeria.component';
 // Proveedores y Servicios
 import { HttpModule, JsonpModule } from '@angular/http';
 import { PeliculasService } from './services/peliculas.service';
-
+import { PosterComponent } from './components/home/poster.component';
+import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
+import { PosterDestacadoPipe } from './pipes/poster-destacado.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,9 @@ import { PeliculasService } from './services/peliculas.service';
     NavbarComponent,
     HomeComponent,
     GaleriaComponent,
+    PosterComponent,
+    PeliculaImagenPipe,
+    PosterDestacadoPipe,
   ],
   imports: [
     BrowserModule,
