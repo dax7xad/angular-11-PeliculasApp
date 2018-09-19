@@ -10,7 +10,6 @@ export class PosterComponent implements OnInit {
 
   @Input('pelicula') pelicula: IPelicula;
   @Input('principal') principal: boolean;
-
   constructor() { }
 
   ngOnInit() {
