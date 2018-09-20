@@ -7,44 +7,28 @@
 
   <div class="col-sm-6">
     <div class="row">
-      <app-poster class="col-md-12 div-pic-1 puntero" [pelicula]="peliculas[0]" principal="true">
+      <app-poster class="puntero" [pelicula]="peliculas[0]" style="width: 100%">
       </app-poster>
     </div>
 
     <div class="row">
-      <app-poster *ngFor="let item of peliculas|slice:1:3" class="col-sm-6 div-pic-2 puntero" [pelicula]="item" principal="false">
+      <app-poster  *ngFor="let item of peliculas|slice:1:3" class="puntero" [pelicula]="item" style="width: 50%">
       </app-poster>
     </div>
 
   </div>
 
   <div class="col-sm-6">
-
-
     <div class="row">
-      <div class="col-sm-6 div-pic-2 puntero" [routerLink]="['/pelicula',peliculas[3].id, 'home' ]" [ngStyle]="{ 'background-image': 'url( '+ ( peliculas[3] | peliculaImagen )  +' )'  }">
-
-        <p class="pic-titulo">
-          {{ peliculas[3].titulo_original }}
-        </p>
-      </div>
-      <div class="col-sm-6 div-pic-2 puntero" [routerLink]="['/pelicula',peliculas[4].id, 'home' ]" [ngStyle]="{ 'background-image': 'url( '+ ( peliculas[4] | peliculaImagen )  +' )'  }">
-        <p class="pic-titulo">
-          {{ peliculas[4].titulo_original }}
-        </p>
-      </div>
+      <app-poster style="width: 50%"  *ngFor="let item of peliculas|slice:3:5" class="puntero" [pelicula]="item" principal="false">
+      </app-poster>
     </div>
 
     <div class="row">
-      <div class="col-md-12 div-pic-1 puntero" [routerLink]="['/pelicula',peliculas[5].id, 'home' ]" [ngStyle]="{ 'background-image': 'url( '+ ( peliculas[5] | peliculaImagen )  +' )'  }">
-        <p class="pic-titulo">
-          {{ peliculas[5].original_title }}
-        </p>
-      </div>
+      <app-poster style="width: 100%"  class="puntero" [pelicula]="peliculas[5]" principal="true">
+      </app-poster>
     </div>
 
   </div>
-
-
 
 </div>

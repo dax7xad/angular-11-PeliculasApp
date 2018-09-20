@@ -9,21 +9,15 @@
   <br>
 
 
-  <!-- <div *ngFor=" let item of populares|slice:0:3|posterDestacado:true">
-    <app-poster [pelicula]="item" [principal]="item.principal" >
-
-    </app-poster>
-  </div> -->
-
 
   <app-galeria [peliculas]="cines|slice:0:6"
               titulo="Películas en cartelera"></app-galeria>
 
-  <!-- <app-galeria [peliculas]="populares|slice:0:6"
+  <app-galeria [peliculas]="populares|slice:0:6"
               titulo="Populares"></app-galeria>
 
   <app-galeria [peliculas]="infantiles|slice:0:6"
-              titulo="Populares entre los más pequeños"></app-galeria> -->
+              titulo="Populares entre los más pequeños"></app-galeria>
 
 
 </div>
