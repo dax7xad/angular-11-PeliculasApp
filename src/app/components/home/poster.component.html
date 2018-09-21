@@ -1,16 +1,9 @@
 
- <div  class="card bg-dark text-white">
+ <div [routerLink]="['/pelicula', pelicula.id, 'home' ]"
+   class="card bg-dark text-white" >
   <img class="card-img" [src]="pelicula | peliculaImagen" alt="Card image">
   <div class="card-img-overlay">
     <p class="pic-titulo card-title">{{ pelicula.titulo_original }}</p>
   </div>
 </div>
 
- <!-- <div [ngClass]="{'col-md-12 div-pic-1 puntero': principal ,
-    'col-sm-6 div-pic-2 puntero': !principal }" [ngStyle]="{ 'background-image': 'url( '+ ( pelicula | peliculaImagen )  +' )' }">
-        <p class="pic-titulo">
-          {{ pelicula.titulo_original }}
-        </p>
-    </div> -->
-
-    <!-- si quito el [ngClass] no funciona el [ngStyle] -->

@@ -17,6 +17,7 @@ import { PeliculasService } from './services/peliculas.service';
 import { PosterComponent } from './components/home/poster.component';
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
 import { PosterDestacadoPipe } from './pipes/poster-destacado.pipe';
+import { PeliculaComponent } from './components/pelicula/pelicula.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PosterDestacadoPipe } from './pipes/poster-destacado.pipe';
     PosterComponent,
     PeliculaImagenPipe,
     PosterDestacadoPipe,
+    PeliculaComponent,
   ],
   imports: [
     BrowserModule,
