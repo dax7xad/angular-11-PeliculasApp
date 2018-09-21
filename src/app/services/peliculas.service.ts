@@ -91,4 +91,29 @@ export class PeliculasService {
       })
     );
   }
+
+  ObtenerPelicula(id: string): Observable<IPelicula> {
+    const URL = `${ this.urlMoviedb }/movie/${ id }?api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
+
+    return this.jsonp.get(URL).pipe(
+      map(res => {
+        const x = res.json();
+        const peli: IPelicula = {
+          id: x.id,
+          titulo: x.title,
+          titulo_original: x.original_title,
+          popularidad: x.popularity,
+          vote_average: x.vote_average,
+          descripcion: x.overview,
+          poster_path: x.poster_path,
+          backdrop_path: x.backdrop_path,
+          frase_celebre: x.tagline
+
+        };
+        console.log(x);
+        return peli ;
+      })
+    );
+  }
+
 }

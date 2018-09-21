@@ -25,9 +25,9 @@ export class PeliculaComponent implements OnInit {
 
         const _idPelicula = parametros['id'];
 
-        this._srvpelis.buscarPelicula(_idPelicula)
+        this._srvpelis.ObtenerPelicula(_idPelicula)
         .subscribe( pelicula => {
-            console.log(pelicula);
+            this.pelicula = pelicula;
         });
 
       });
