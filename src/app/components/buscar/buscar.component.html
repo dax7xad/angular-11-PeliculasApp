@@ -1,0 +1,30 @@
+<div class="container main-container">
+  <div class="col-md-12">
+    <div class="form-group">
+      <label>Criterio de la busqueda:</label>
+      <input [(ngModel)]="criterio" (keyup.enter)="GetPelicula()" type="text" name="criterio" class="form-control" placeholder="Escriba el nombre de la pelicula a buscar">
+    </div>
+  </div>
+
+  <hr>
+  <div class="row animated fadeIn fast">
+      <div class="card-columns">
+
+        <div class="card" *ngFor="let pelicula of peliculas">
+          <img class="card-img-top img-fluid" [src]="pelicula|peliculaImagen" [alt]="pelicula.titulo_original">
+          <div class="card-block">
+            <h4 class="card-title">{{ pelicula.titulo_original }}</h4>
+            <p class="card-text text-justify">{{ pelicula.descripcion | slice:0:250}}...</p>
+            <button type="button"
+                    [routerLink]="['/pelicula', pelicula.id, 'buscar', criterio]"
+                    class="btn btn-outline-primary btn-block">
+              Ver más...
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+</div>
+

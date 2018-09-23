@@ -12,15 +12,15 @@ export class PeliculaComponent implements OnInit {
 
   pelicula: IPelicula;
   regresarA = '';
-  busqueda = '';
+  criterio = '';
   constructor(public _srvpelis: PeliculasService, public route: ActivatedRoute) {
       this.route.params
       .subscribe(parametros => {
         console.log('param:', parametros);
         this.regresarA = parametros['pag'];
 
-        if (parametros['busqueda']) {
-          this.busqueda = parametros['busqueda'];
+        if (parametros['criterio']) {
+          this.criterio = parametros['criterio'];
         }
 
         const _idPelicula = parametros['id'];

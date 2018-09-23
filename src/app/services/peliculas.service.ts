@@ -11,6 +11,9 @@ export class PeliculasService {
   private apikey = 'a92319a9ef436d112716f49b16dcd298';
   private urlMoviedb = 'https://api.themoviedb.org/3';
 
+
+  peliculas: IPelicula[];
+
   constructor(private jsonp: Jsonp) { }
 
 
@@ -78,16 +81,17 @@ export class PeliculasService {
     );
   }
 
-  buscarPelicula(texto: string) {
+  buscarPeliculas(texto: string): Observable<IPelicula[]> {
     const URL = `${
       this.urlMoviedb
       }/search/movie?query=${texto}&sort_by=popularity.desc&api_key=${
       this.apikey
       }&language=es&callback=JSONP_CALLBACK`;
 
-    return this.jsonp.get(URL).pipe(
-      map(res => {
-        return res.json().results;
+      return this.jsonp.get(URL).pipe(
+       map(res => {
+        this.peliculas = this.GetArrayPelis(res.json().results);
+        return this.GetArrayPelis(res.json().results);
       })
     );
   }
