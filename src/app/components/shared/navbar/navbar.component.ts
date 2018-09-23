@@ -20,9 +20,8 @@ export class NavbarComponent implements OnInit {
       return false;
     }
     this._srvpelis.buscarPeliculas(this.criterio).subscribe(
-      (response) =>  this.router.navigate(['/buscar', this.criterio])
+     respose => this.router.navigate(['/buscar', this.criterio])
     );
-
   }
 
 }
